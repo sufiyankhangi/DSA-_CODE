@@ -10,10 +10,10 @@ import java.util.*;
            int n = sc.nextInt();
 
            int count = 0;
-           for(int div=2;div*div<=n;div++){
+           for(int div=2;div*div<=n;div++){       // used square method
                if (n%div == 0){
                    count++;
-                   break;
+                   break;         // used break for only one comaprison
                }
            }
            if(count == 0){
