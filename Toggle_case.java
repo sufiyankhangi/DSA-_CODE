@@ -2,28 +2,25 @@ import java.util.*;
 public class Toggle_case {
 
     public static void main(String[] args){
-      String s1 = "pepCODing";
-      solution(s1);
-      System.out.println(solution(s1));
+      String str = "peping";
+      System.out.println(solution(str));
       
     }
     
 
     public static String solution(String str) {
-      StringBuilder sb = new StringBuilder(str);
+      StringBuilder sb = new StringBuilder();
+      sb.append(str.charAt(0));
 
-      for(int i =0;i<sb.length();i++){
-        char ch1 = sb.charAt(i);
-        if(ch1 >= 'a' && ch1 <= 'z'){
-          char upc = (char)(ch1 -'a'+ 'A');
-          sb.setCharAt(i,upc);
-        }else if(ch1 >= 'A' && ch1 <= 'Z'){
-          char lc = (char)(ch1 -'A'+ 'a');
-          sb.setCharAt(i,lc);
-        
+      for(int i =1;i<str.length();i++){
+        char ch1 = str.charAt(i);
+        char ch2 = str.charAt(i-1);
+        int ch = ch1 - ch2;
+        sb.append(ch);
+        sb.append(ch1);
       
       // 'p' - 'a' = 'P'-'A'
-      }
-    }return sb.toString();
+      }return sb.toString();
+    }
     
-  }}
+  }
